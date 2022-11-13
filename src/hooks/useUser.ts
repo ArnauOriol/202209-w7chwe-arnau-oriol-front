@@ -4,7 +4,7 @@ const useUser = () => {
   const apiUrl = process.env.REACT_APP_URL_API!;
 
   const registerUser = async (userData: RegisterData) => {
-    await fetch(`${apiUrl}/users/register`, {
+    await fetch(`${apiUrl}/users/signup`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
