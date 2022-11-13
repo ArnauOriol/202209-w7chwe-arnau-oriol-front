@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
 import { UserRegisterData } from "../../types/types";
+import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
 
 const RegisterForm = (): JSX.Element => {
@@ -9,7 +10,6 @@ const RegisterForm = (): JSX.Element => {
     username: "",
     password: "",
     email: "",
-    picture: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -82,6 +82,7 @@ const RegisterForm = (): JSX.Element => {
           />
           <label className="register-form__label" htmlFor="email"></label>
         </div>
+        <Button text="Register" />
       </form>
     </RegisterFormStyled>
   );
