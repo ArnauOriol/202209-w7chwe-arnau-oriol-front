@@ -10,3 +10,16 @@ export interface UserRegisterData {
   email: string;
   picture?: string;
 }
+
+export interface UsersState {
+  list: User[];
+}
+
+export interface User {
+  name: string;
+  email: string;
+  picture: string;
+  id: string;
+  friends: [];
+  enemies: [];
+}
