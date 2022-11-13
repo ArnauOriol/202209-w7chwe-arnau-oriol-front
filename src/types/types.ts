@@ -3,3 +3,10 @@ export interface RegisterData {
   email: string;
   picture?: string;
 }
+
+export interface UserRegisterData {
+  username: string;
+  password: string;
+  email: string;
+  picture?: string;
+}
