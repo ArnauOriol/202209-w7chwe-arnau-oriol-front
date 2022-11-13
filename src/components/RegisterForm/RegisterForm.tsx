@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
 import { UserRegisterData } from "../../types/types";
+import RegisterFormStyled from "./RegisterFormStyled";
 
 const RegisterForm = (): JSX.Element => {
   const { registerUser } = useUser();
@@ -33,9 +34,12 @@ const RegisterForm = (): JSX.Element => {
   };
 
   return (
-    <>
+    <RegisterFormStyled className="container">
       <span className="register-form__logo">fakebook</span>
-      <form onSubmit={(event) => handleSubmit(event)}>
+      <form
+        onSubmit={(event) => handleSubmit(event)}
+        className="register-form__wrapper"
+      >
         <div className="register-form__input">
           <input
             type="text"
@@ -79,7 +83,7 @@ const RegisterForm = (): JSX.Element => {
           <label className="register-form__label" htmlFor="email"></label>
         </div>
       </form>
-    </>
+    </RegisterFormStyled>
   );
 };
 
