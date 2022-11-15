@@ -41,3 +41,8 @@ export interface UserState {
   token: string;
   isLogged: boolean;
 }
+
+export interface JwtCustomPayload {
+  id: string;
+  username: string;
+}
