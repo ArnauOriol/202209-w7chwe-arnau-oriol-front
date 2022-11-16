@@ -1,41 +1,37 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ProviderWrapper from "../../mocks/providerWrapper";
-import RegisterForm from "./RegisterForm";
+import LoginForm from "./LoginForm";
 
 const mockRegisterAction = jest.fn();
 
 jest.mock("../../hooks/useUser", () => {
   return () => ({
-    registerUser: mockRegisterAction,
+    loginUser: mockRegisterAction,
   });
 });
 
-describe("Given a RegisterForm component", () => {
-  describe("When it's rendered", () => {
-    test("The it should show 3 input elements", () => {
-      const expectedInputs = 2;
+describe("Given a LoginForm component", () => {
+  describe("When its rendered", () => {
+    test("Then it should 2 input elements", () => {
+      render(<LoginForm />, { wrapper: ProviderWrapper });
 
-      render(<RegisterForm />, { wrapper: ProviderWrapper });
-
-      const formInputs = screen.queryAllByRole("textbox");
+      const usernameInput = screen.queryByRole("textbox");
       const passwordInput = screen.queryByLabelText("password-input");
 
-      expect(formInputs).toHaveLength(expectedInputs);
+      expect(usernameInput).toBeInTheDocument();
       expect(passwordInput).toBeInTheDocument();
     });
   });
 
-  describe("When its button 'Register' is clicked", () => {
+  describe("When its button 'Login' is clicked", () => {
     test("Then the form should be submitted", async () => {
-      const buttonText = "Register";
+      const buttonText = "Login";
 
-      render(<RegisterForm />, { wrapper: ProviderWrapper });
+      render(<LoginForm />, { wrapper: ProviderWrapper });
 
       const usernameInput = screen.queryByLabelText("username-input")!;
       await userEvent.type(usernameInput, "arnau");
-      const emailInput = screen.queryByLabelText("email-input")!;
-      await userEvent.type(emailInput, "arna@u.com");
       const passwordInput = screen.queryByLabelText("password-input")!;
       await userEvent.type(passwordInput, "arnau");
 
