@@ -29,8 +29,6 @@ const RegisterFormStyled = styled.div`
         width: 300px;
       }
     }
-    &__input {
-    }
     &__field {
       width: 100%;
       border: 2px solid #808080;
@@ -38,7 +36,10 @@ const RegisterFormStyled = styled.div`
       height: 40px;
       padding: 15px;
     }
-    &__label {
+    &__redirect {
+      font-weight: 700;
+      color: #1877f2;
+      text-decoration: none;
     }
   }
 `;

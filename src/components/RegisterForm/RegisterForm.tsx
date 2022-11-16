@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import useUser from "../../hooks/useUser";
 import { UserRegisterData } from "../../types/types";
 import Button from "../Button/Button";
@@ -83,6 +84,12 @@ const RegisterForm = (): JSX.Element => {
           <label className="register-form__label" htmlFor="email"></label>
         </div>
         <Button text="Register" />
+        <span>
+          Already have an account?{" "}
+          <NavLink to="/users/login" className="register-form__redirect">
+            Login
+          </NavLink>
+        </span>
       </form>
     </RegisterFormStyled>
   );
