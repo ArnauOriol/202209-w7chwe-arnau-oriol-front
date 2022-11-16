@@ -13,7 +13,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route
-          path="/"
+          path="/users/signup"
           element={
             <ExitRoute isLogged={isLogged}>
               <RegisterPage />
@@ -21,6 +21,7 @@ const App = () => {
           }
         />
         <Route path="/users/login" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
       </Routes>
     </>
   );
